@@ -1,0 +1,48 @@
+<div id="id01"></div>
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "https://www.astrobin.com";
+var claves = "XXXXXX"; // Your Astrobin API key
+var imageDay = "/api/v1/imageoftheday/?limit=1&";
+
+xmlhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200) {
+	var myArr = JSON.parse(this.responseText);
+        getIOTDInfo(myArr);
+		}
+};
+xmlhttp.open("GET", url + imageDay + claves, true);
+xmlhttp.send();
+
+function getIOTDInfo(arr) {
+    var out = "";
+    out = arr.objects[0].image; 
+    xmlhttp.onreadystatechange = function() {
+		  if (this.readyState == 4 && this.status == 200) {
+		var myArr = JSON.parse(this.responseText);
+			getImageAndLink(myArr);
+			}
+	};
+	xmlhttp.open("GET", url + out  + "/?" + claves, true);
+	xmlhttp.send();
+}
+
+function getImageAndLink(arr) {
+	console.log(arr)
+    var out = "";
+    out = arr.url_hd; 
+    out = arr.url_hd; 
+	console.log(out)
+	
+	var image = document.createElement("IMG");
+	image.src = out;
+	image.onclick = function() {
+		window.open(
+			'http://astrobin.com',
+			'_blank' // <- This is what makes it open in a new window.
+)
+	};
+    document.getElementById("id01").appendChild(image);
+}
+
+</script>
