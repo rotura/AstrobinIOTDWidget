@@ -28,12 +28,8 @@ function getIOTDInfo(arr) {
 }
 
 function getImageAndLink(arr) {
-	console.log(arr)
     var out = "";
     out = arr.url_hd; 
-    out = arr.url_hd; 
-	console.log(out)
-	
 	var image = document.createElement("IMG");
 	image.src = out;
 	image.onclick = function() {
@@ -42,6 +38,7 @@ function getImageAndLink(arr) {
 			'_blank' // <- This is what makes it open in a new window.
 )
 	};
+	image.style = 'cursor: hand;'
     document.getElementById("id01").appendChild(image);
 }
 
