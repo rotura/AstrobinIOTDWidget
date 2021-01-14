@@ -29,7 +29,12 @@ function getIOTDInfo(arr) {
 
 function getImageAndLink(arr) {
     var out = "";
-    out = arr.url_hd; 
+	console.log(arr);
+    out = arr.url_hd;
+	var title = document.createElement("h1");
+	title.innerHTML = arr.title;
+	var autor = document.createElement("p");
+	autor.innerHTML = "<b>Autor:</b> " + "<a href=&quot;" + arr.url_gallery + "&quot;>" + arr.user + "</a>";
 	var image = document.createElement("IMG");
 	image.src = out;
 	image.onclick = function() {
@@ -39,7 +44,9 @@ function getImageAndLink(arr) {
 )
 	};
 	image.style = 'cursor: hand;'
+    document.getElementById("id01").appendChild(title);
     document.getElementById("id01").appendChild(image);
+    document.getElementById("id01").appendChild(autor);
 }
 
 </script>
