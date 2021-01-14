@@ -1,5 +1,6 @@
 <div id="id01"></div>
 <script>
+// Author: Enol Matilla
 var xmlhttp = new XMLHttpRequest();
 var url = "https://www.astrobin.com";
 var claves = "XXXXXX"; // Your Astrobin API key
@@ -28,12 +29,20 @@ function getIOTDInfo(arr) {
 }
 
 function getImageAndLink(arr) {
-    var out = "";
-    out = arr.url_hd;
+	// Title of the image
 	var title = document.createElement("h1");
 	title.innerHTML = arr.title;
+	
+	// Author of the Image
 	var autor = document.createElement("p");
 	autor.innerHTML = "<b>Autor:</b> " + "<a href=&quot;" + arr.url_gallery + "&quot;>" + arr.user + "</a>";
+	
+	// The image itself. Change "url_hd" depending of the image quality needed:
+	// url_thumb: 80x80
+	// url_regular: Small size like 600x600
+	// url_hd: Medium size like 1800x1600
+	// url_real: Original resolution like 3500x3200
+	var out = arr.url_hd;
 	var image = document.createElement("IMG");
 	image.src = out;
 	image.onclick = function() {
