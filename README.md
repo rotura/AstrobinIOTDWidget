@@ -9,3 +9,10 @@ It shows the original title of the image, the image itself and the author with a
 On Wordpress, go to "Appearence -> Widgets" and create a new "Custom HTML" whre you like to have it. Then, copy and paste the code and replace the APIkey under "claves".
 
 On other managers will be similar.
+
+# Changelog
+
+* v1.0.3 - Change cursor pointer to work with Chrome and Firefox.
+* v1.0.2 - Added Title over the image and author under it with their gallery link.
+* v1.0.1 - Added hand cursor over the image.
+* v1.0.0 - Initial version with and Image linked to Astrobin homepage.
