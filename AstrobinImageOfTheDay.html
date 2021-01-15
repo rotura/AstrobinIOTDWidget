@@ -1,6 +1,7 @@
 <div id="id01"></div>
 <script>
 // Author: Enol Matilla
+// Version: 1.0.3
 var xmlhttp = new XMLHttpRequest();
 var url = "https://www.astrobin.com";
 var claves = "XXXXXX"; // Your Astrobin API key
@@ -51,7 +52,7 @@ function getImageAndLink(arr) {
 			'_blank' // <- This is what makes it open in a new window.
 )
 	};
-	image.style = 'cursor: hand;'
+	image.style = 'cursor: pointer;'
     document.getElementById("id01").appendChild(title);
     document.getElementById("id01").appendChild(image);
     document.getElementById("id01").appendChild(autor);
