@@ -1,10 +1,14 @@
 <div id="id01"></div>
 <script>
 // Author: Enol Matilla
-// Version: 1.0.3
+// Version: 1.0.4
 var xmlhttp = new XMLHttpRequest();
 var url = "https://www.astrobin.com";
-var claves = "api_key=KEY&api_secret=SECRET"; // Your Astrobin API key and API Secret. CHANGE IT.
+	
+var API_KEY = "XXXXX"; //Your Astrobin API key
+var API_SECRET = "XXXXX"; // Your Astrobin API secret
+
+var keys = "api_key=" + API_KEY + "&api_secret=" + API_SECRET;
 var imageDay = "/api/v1/imageoftheday/?limit=1&";
 
 xmlhttp.onreadystatechange = function() {
@@ -13,7 +17,7 @@ xmlhttp.onreadystatechange = function() {
         getIOTDInfo(myArr);
 		}
 };
-xmlhttp.open("GET", url + imageDay + claves, true);
+xmlhttp.open("GET", url + imageDay + keys, true);
 xmlhttp.send();
 
 function getIOTDInfo(arr) {
@@ -25,7 +29,7 @@ function getIOTDInfo(arr) {
 			getImageAndLink(myArr);
 			}
 	};
-	xmlhttp.open("GET", url + out  + "/?" + claves, true);
+	xmlhttp.open("GET", url + out  + "/?" + keys, true);
 	xmlhttp.send();
 }
 
