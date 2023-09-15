@@ -12,6 +12,7 @@ On other managers will be similar.
 
 # Changelog
 
+* v1.0.4 - Added a version for the latest image of a specific user.
 * v1.0.3 - Change cursor pointer to work with Chrome and Firefox.
 * v1.0.2 - Added Title over the image and author under it with their gallery link.
 * v1.0.1 - Added hand cursor over the image.
